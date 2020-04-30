@@ -1,0 +1,16 @@
+version: "2.1"
+
+services:
+
+  boursorama-scraping:
+    container_name: boursorama-scraping
+    image: boursorama-scraping:$VERSION_BOURSORAMA_SCRAPING
+    networks:
+      - stocknet
+    volumes:
+      - ${RUN_DIRECTORY}/conf.yml:/root/conf.yml
+
+networks:
+
+  stocknet:
+    external: true
